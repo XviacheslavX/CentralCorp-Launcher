@@ -31,43 +31,57 @@
 
   <div class="login-card-mojang">
     <div class="card-body">
-      <div>
-        <small class="info-login" id="info-login"></small>
+      <!-- <small class="info-login" id="info-login"></small> -->
 
-        <div class="login-card-mojang-input">
-          <label id="username-label"></label>
-          <input
-            type="text"
-            class="Mail login-mojang-input"
-            spellcheck="false"
+      <div class="box-login">
+        <div class="icons">
+          <img
+            src="./assets/images/registration-popup.png"
+            alt=""
+            width="345px"
+            height="480px"
           />
-          <small class="error-mail">&nbsp;</small>
         </div>
+        <div class="input-login">
+          <small class="info-login" id="info-login"></small>
+          <div class="login-card-mojang-input">
+            <label id="username-label" class="text-label"></label>
+            <input
+              type="text"
+              class="Mail login-mojang-input"
+              spellcheck="false"
+              placeholder="Login"
+            />
+            <small class="error-mail">&nbsp;</small>
+          </div>
 
-        <div class="login-card-mojang-input">
-          <label id="password-label"></label>
-          <input
-            type="password"
-            class="Password login-mojang-input"
-            spellcheck="false"
-          />
-          <small class="error-password">&nbsp;</small>
-        </div>
+          <div class="login-card-mojang-input">
+            <label id="password-label" class="text-label"></label>
+            <input
+              type="password"
+              class="Password login-mojang-input"
+              spellcheck="false"
+              placeholder="Qwerty111"
+            />
+            <small class="error-password">&nbsp;</small>
+          </div>
 
-        <div class="login-options">
-          <a
-            class="password-reset"
-            id="password-reset-link"
-            target="_blank"
-          ></a>
-          <br />
-          <a class="new-user" id="new-user-link" target="_blank"></a>
-          <div class="btn-option-login">
-            <button class="login-btn" id="login-btn"></button>
-            <button
-              class="cancel cancel-mojang"
-              id="cancel-mojang-btn"
-            ></button>
+          <div class="login-options">
+            <div class="link-a">
+              <a
+                class="password-reset"
+                id="password-reset-link"
+                target="_blank"
+              ></a>
+              <a class="new-user" id="new-user-link" target="_blank"></a>
+            </div>
+            <div class="btn-option-login">
+              <button class="login-btn" id="login-btn"></button>
+              <button
+                class="cancel cancel-mojang"
+                id="cancel-mojang-btn"
+              ></button>
+            </div>
           </div>
         </div>
       </div>
