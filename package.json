@@ -1,8 +1,8 @@
 {
     "name": "conflictura",
-    "preductname": "Conflictura Launcher",
-    "version": "3.2.5",
-    "description": "Conflictura modded server launcher",
+    "preductname": "UcLauncher",
+    "version": "3.2.6",
+    "description": "UcLauncher server",
     "main": "src/app.js",
     "author": "Riptiaz/Boulldogo/Vexato/Luuxis",
     "env": "azuriom",
