@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35%;
+    min-width: 50%;
     background: #000000;
     padding: 20px;
     font: normal normal bold 19px/29px Poppins;
@@ -15,6 +15,7 @@
 .login-type {
     display: grid;
     padding: 0 7%;
+    padding-top: 25px;
 }
 
 .login-type-btn {
@@ -22,17 +23,21 @@
     border: none;
     margin: 2% 0;
     height: 2em;
-    background-color: #00bd7a;
-    box-shadow: 0 0 5px #00bd7a;
-    color: #121212;
+    background-color: #5b20ff;
+    box-shadow: 0 0 5px #5b20ff;
+    width: 285px;
+    height: 48px;
+    color: white;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
+    transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 
 .login-type-btn:hover {
-    background-color: #006e47;
-    box-shadow: 0 0 5px #006e47;
+    background-color: white;
+    box-shadow: 0 0 5px white;
+    color: black;
 }
 
 .login-type-btn:disabled {
@@ -132,7 +137,7 @@
     box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.15);
     width: 285px;
     height: 48px;
-    color: #121212;
+    color: white;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
     transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -239,3 +244,61 @@
 .cancel-email:hover {
     color: #373737;
 } 
+.link-login-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 24px;
+}
+.a-login-size{
+    display: block;
+}
+.link-a-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+.reg-a{
+    display: flex;
+    background-color: #5b20ff;
+    box-shadow: 0 0 5px #5b20ff;
+    width: 285px;
+    height: 48px;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font: normal normal bold 18px/29px Poppins;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 1s cubic-bezier(0.075, 0.82, 0.165, 1), color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.reg-a:hover {
+    background-color: white;
+    box-shadow: 0 0 5px white;
+    color: black;
+}
+.svg-link{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.svg-icon{
+    fill: #5b20ff;
+
+    transition: fill 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.svg-icon:hover{
+    fill: white;
+}
+.login-title{
+    display: none;
+}
