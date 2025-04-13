@@ -1,7 +1,7 @@
 {
     "name": "conflictura",
     "preductname": "UcLauncher",
-    "version": "3.2.7",
+    "version": "3.2.8",
     "description": "UcLauncher server",
     "main": "src/app.js",
     "author": "Riptiaz/Boulldogo/Vexato/Luuxis",
