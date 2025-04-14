@@ -16,7 +16,7 @@ builder.build({
             releaseType: "release",
         },
         win: {
-            icon: "./src/assets/images/icon.ico",
+            icon: "./src/assets/images/uc-logo.png",
             target: [{
                 target: "nsis",
                 arch: ["x64"]
