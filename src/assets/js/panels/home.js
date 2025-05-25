@@ -5,9 +5,10 @@
 'use strict';
 
 import { logger, database, changePanel, t } from '../utils.js';
-const { Launch, Status } = require('minecraft-java-core-azbetter');
+const { Launch, Status } = require('../minecraft-java-core/build');
 const { ipcRenderer, shell } = require('electron');
 const path = require('path');
+const https = require('https');
 const fs = require('fs');
 const launch = new Launch();
 const pkg = require('../package.json');
@@ -115,13 +116,14 @@ class Home {
         const javaArgs = (await this.database.get('1234', 'java-args')).value;
         const resolution = (await this.database.get('1234', 'screen')).value;
         const launcherSettings = (await this.database.get('1234', 'launcher')).value;
+        account.meta.type = 'mojang';
 
         const screen = resolution.screen.width === '<auto>' ? false : { width: resolution.screen.width, height: resolution.screen.height };
 
         return {
             url: urlpkg,
             authenticator: account,
-            timeout: 10000,
+            timeout: 30000,
             path: `${dataDirectory}/${process.platform == 'darwin' ? this.config.dataDirectory : `.${this.config.dataDirectory}`}`,
             version: this.config.game_version,
             detached: launcherSettings.launcher.close === 'close-all' ? false : true,
@@ -179,11 +181,11 @@ class Home {
 
     handleLaunchData(e, info, progressBar, playBtn, launcherSettings) {
         new logger('Minecraft', '#36b030');
+        console.log(e);
         if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
         ipcRenderer.send('main-window-progress-reset');
         progressBar.style.display = "none";
         info.innerHTML = t('starting');
-        console.log(e);
     }
 
     handleLaunchClose(code, info, progressBar, playBtn, launcherSettings) {
