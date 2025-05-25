@@ -1,0 +1,5 @@
+node_modules
+test/Minecraft
+test/*.json*
+webfiles/instances/*
+.DS_Store

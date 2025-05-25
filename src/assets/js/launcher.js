@@ -7,7 +7,7 @@
 
 // libs 
 const fs = require('fs');
-const { Microsoft, Mojang, AZauth } = require('../minecraft-java-core/build');
+const { Microsoft, Mojang, AZauth } = require('./minecraft-java-core/build');
 const pkg = require('../package.json');
 const { ipcRenderer } = require('electron');
 const DiscordRPC = require('discord-rpc');
