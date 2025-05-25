@@ -5,7 +5,7 @@
 'use strict';
 
 import { logger, database, changePanel, t } from '../utils.js';
-const { Launch, Status } = require('./minecraft-java-core/build');
+const { Launch, Status } = require('./minecraft-java-core/build/Index.js');
 const { ipcRenderer, shell } = require('electron');
 const path = require('path');
 const https = require('https');

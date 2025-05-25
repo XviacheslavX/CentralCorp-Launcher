@@ -1,5 +1,5 @@
 import { database, changePanel, addAccount, accountSelect, t } from '../utils.js';
-const { AZauth } = require('./minecraft-java-core/build');
+const { AZauth } = require('./minecraft-java-core/build/Index.js');
 const { ipcRenderer, shell } = require('electron');
 const pkg = require('../package.json');
 const settings_url = pkg.user ? `${pkg.settings}/${pkg.user}` : pkg.settings;
