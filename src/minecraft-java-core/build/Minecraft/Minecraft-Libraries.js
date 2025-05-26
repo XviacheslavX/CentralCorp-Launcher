@@ -11,6 +11,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const os_1 = __importDefault(require("os"));
 const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const adm_zip_1 = __importDefault(require("adm-zip"));
 /**
  * Maps Node.js platforms to Mojang's naming scheme for OS in library natives.
@@ -86,6 +87,42 @@ class Libraries {
                 url: artifact.url
             });
         }
+
+        // Захардкоджене додавання статичних бібліотек authlib
+        const staticLibBasePath = path_1.default.resolve(__dirname, '..', '..', '..', '..', 'src', 'minecraft-java-core', 'assets', 'static-libs', 'authlib', '1.5.25').replace(/\\/g, '/');
+        console.log(`Base static library path: ${staticLibBasePath}`);
+        const authlibFiles = [
+            'authlib-1.5.25.jar',
+            'authlib-1.5.25_skinfix.jar'
+        ];
+        for (const file of authlibFiles) {
+            const sourcePath = `${staticLibBasePath}/${file}`;
+            const destPath = `${this.options.path}/libraries/com/mojang/authlib/1.5.25/${file}`.replace(/\\/g, '/');
+            const destDir = path_1.default.dirname(destPath);
+            if (!fs_1.default.existsSync(destDir)) {
+                fs_1.default.mkdirSync(destDir, { recursive: true });
+            }
+            if (fs_1.default.existsSync(sourcePath)) {
+                console.log(`Found static library: ${file}`);
+                libraries.push({
+                    sha1: null,
+                    size: fs_1.default.statSync(sourcePath).size,
+                    path: `libraries/authlib/${file}`,
+                    type: 'Libraries',
+                    url: null,
+                    localPath: sourcePath
+                });
+                if (!fs_1.default.existsSync(destPath)) {
+                    console.log(`Copying ${file} to ${destPath}`);
+                    fs_1.default.copyFileSync(sourcePath, destPath);
+                } else {
+                    console.log(`${file} already exists at ${destPath}`);
+                }
+            } else {
+                console.log(`Static library not found: ${file} at ${sourcePath}`);
+            }
+        }
+
         // Add the main Minecraft client JAR to the list
         libraries.push({
             sha1: this.json.downloads.client.sha1,
@@ -175,4 +212,3 @@ class Libraries {
     }
 }
 exports.default = Libraries;
-//# sourceMappingURL=Minecraft-Libraries.js.map

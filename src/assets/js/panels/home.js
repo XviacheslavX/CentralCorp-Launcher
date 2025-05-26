@@ -199,10 +199,7 @@ class Home {
           : Object.values(this.config.ignored)),
         'launcher_config',
       ],
-      java: {
-        version: '16',
-        type: 'jdk',
-      }, 
+      java: this.config.java,
       memory: {
         min: `${ram.ramMin * 1024}M`,
         max: `${ram.ramMax * 1024}M`,
