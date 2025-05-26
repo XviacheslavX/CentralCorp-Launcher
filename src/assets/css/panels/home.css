@@ -177,9 +177,14 @@
     background: white !important;
     color: black;
 }
+.play-btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
 .bottom-bar-home:hover{
     background: rgba(0, 0, 0, 0.3);
-}
+} 
 .download-content {
     position: absolute;
     top: 50%;
@@ -619,6 +624,11 @@ body::-webkit-scrollbar {
 }
 .list-server{
     margin-bottom: 20px;
+    cursor: pointer;
+}
+.list-server.active {
+    border: 1px solid white;
+    border-radius: 5px;
 }
 /* News Blok My */
 .news-block:hover .news-header .date {

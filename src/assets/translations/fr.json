@@ -31,7 +31,7 @@
     "no_news_available": "Aucune news n'est actuellement disponible.",
     "news_follow_here": "Vous pourrez suivre ici toutes les news relatives au serveur.",
     "error_contacting_server": "Erreur. Impossible de contacter le serveur des news. Merci de vérifier votre configuration.",
-    "server_unavailable": "Serveur indisponible",
+    "server_unavailable": "Désactivé",
     "server_online": "En ligne",
     "server_ping": "ms",
     "patch_in_progress": "Patch en cours...",

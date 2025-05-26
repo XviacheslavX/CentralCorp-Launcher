@@ -31,7 +31,7 @@
     "no_news_available": "No news is currently available.",
     "news_follow_here": "You can follow all the server news here.",
     "error_contacting_server": "Error. Unable to contact the news server. Please check your configuration.",
-    "server_unavailable": "Server unavailable",
+    "server_unavailable": "Disabled",
     "online": "Online",
     "patch_in_progress": "Patch in progress...",
     "starting": "Starting...",
